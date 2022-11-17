@@ -1,4 +1,4 @@
-// import React, { Component, Fragment } from 'react'
+
 import React, { useState, Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
@@ -12,7 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-
+import GameParent from './components/game/gameParent'
 const App = () => {
 	const [user, setUser] = useState(null)
 	const [msgAlerts, setMsgAlerts] = useState([])
@@ -41,7 +41,10 @@ const App = () => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+				<Route 
+					path='/' 
+					element={ user? <GameParent msgAlert={msgAlert} user={user}/> : <Home msgAlert={msgAlert}/>} 
+				/>
 				<Route
 					path='/sign-up'
 					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -67,7 +70,7 @@ const App = () => {
 					}
 				/>
 			</Routes>
-			{msgAlerts.map((msgAlert) => (
+			{/* {msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
 					key={msgAlert.id}
 					heading={msgAlert.heading}
@@ -76,7 +79,7 @@ const App = () => {
 					id={msgAlert.id}
 					deleteAlert={deleteAlert}
 				/>
-			))}
+			))} */}
 		</Fragment>
 	)
 }

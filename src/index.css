@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* cell height will need to be dynamically changed based on view screen */
+.cell {
+  background-color: grey;
+  height: 100px; 
+  justify-content: center;
+  text-align: center;
+  line-height: 100px;
+}
+
+.gameDetails {
+  background-color: bisque;
+  justify-content: center;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}

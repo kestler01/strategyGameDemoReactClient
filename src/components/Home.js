@@ -4,7 +4,10 @@ const Home = (props) => {
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>Andrews Strategy Game Demo</h2>
+			<p>
+				<a href='/sign-in'>sign-in</a> or <a href='/sign-up'>register a new account</a> to play
+			</p>
 		</>
 	)
 }
